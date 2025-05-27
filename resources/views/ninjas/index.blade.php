@@ -11,4 +11,6 @@
     @endforeach
 </ul>
 
+{{--This adds pagination controls that work with the pagination added in the controller.--}}
+{{ $ninjas->links() }}
 </x-layout>
