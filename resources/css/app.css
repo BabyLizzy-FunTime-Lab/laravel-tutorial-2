@@ -47,7 +47,7 @@ form {
     @apply max-w-screen-sm;
 }
 input, select, textarea {
-    @apply block w-full mt-2 mb-4 p-2;
+    @apply block w-full mt-2 mb-4 p-2 bg-white;
 }
 
 /* custom classes */
