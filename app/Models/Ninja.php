@@ -11,7 +11,8 @@ class Ninja extends Model
 
     /** @use HasFactory<\Database\Factories\NinjaFactory> */
     use HasFactory;
-    public function dojo() {
+    public function dojo(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(Dojo::class);
     }
 }

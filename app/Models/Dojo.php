@@ -12,7 +12,8 @@ class Dojo extends Model
     /** @use HasFactory<\Database\Factories\DojoFactory> */
     use HasFactory;
 
-    public function ninjas() {
+    public function ninjas(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(Ninja::class);
     }
 }
