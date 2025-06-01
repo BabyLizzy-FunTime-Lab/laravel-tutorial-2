@@ -15,8 +15,12 @@ class NinjaController extends Controller
         return view('ninjas.index', ["ninjas" => $ninjas]);
     }
     public function show($id) {
-        // route --> /ninjas/{id}
+        // show(Ninja $ninja)
+        // With model binding it looks like this.
+        // $ninja->load('dojo');
+        // The next line is not needed.
         $ninja = Ninja::with('dojo')->findOrFail($id);
+
         return view('ninjas.show', ["ninja" => $ninja]);
     }
 
