@@ -36,12 +36,17 @@ class NinjaController extends Controller
 
         Ninja::create($validated);
 
-        return redirect()->route('ninjas.index');
+        return redirect()->route('ninjas.index')->with('success', 'Ninja created successfully.');
     }
 
-    public function destroy($id) {
+    public function destroy(Ninja $ninja) {
         // --> /ninjas/{id} (DELETE)
-        // handle delete request to delete a ninja record from table
+        // When using model binding. Laravel queries the given model (ninja) automatically
+        // with the id.
+//      // $ninja = Ninja::findOrFail($id);  <-this is then not needed.
+        $ninja->delete();
+
+        return redirect()->route('ninjas.index')->with('success', 'Ninja deleted successfully.');
     }
 
     // edit() and update() for edit view and update requests
